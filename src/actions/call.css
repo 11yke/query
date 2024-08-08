@@ -29,6 +29,6 @@
 .call-icon {
   width: 18px;
   height: 18px;
-  transform: rotate(-45deg); /* Rotate back to upright position */
+  transform: rotate(45deg); /* Rotate back to upright position */
   fill: white; /* Ensure the icon is white */
 }

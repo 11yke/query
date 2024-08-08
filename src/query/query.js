@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 import ArrowTopIcon from '../Iconography/arrow-top.svg';
@@ -10,6 +10,31 @@ import './query.css';
 const Query = ({ onSubmit }) => {
   const [inputValue, setInputValue] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  useEffect(() => {
+    const inputContainer = document.querySelector('.input-container');
+
+    const handleMouseMove = (e) => {
+      const rect = inputContainer.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      inputContainer.style.setProperty('--x', `${x}px`);
+      inputContainer.style.setProperty('--y', `${y}px`);
+    };
+
+    const handleMouseLeave = () => {
+      inputContainer.style.setProperty('--x', `50%`);
+      inputContainer.style.setProperty('--y', `50%`);
+    };
+
+    inputContainer.addEventListener('mousemove', handleMouseMove);
+    inputContainer.addEventListener('mouseleave', handleMouseLeave);
+
+    return () => {
+      inputContainer.removeEventListener('mousemove', handleMouseMove);
+      inputContainer.removeEventListener('mouseleave', handleMouseLeave);
+    };
+  }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -24,12 +49,6 @@ const Query = ({ onSubmit }) => {
     <motion.form
       onSubmit={handleSubmit}
       className="input-container"
-      // initial={{ y: '-50%', x: '-50%' }}
-      // animate={{
-      //   // y: isSubmitted ? "50%" : "-50%",
-      //   y: "calc(100vh - 152px - 12px)",
-      //   x: "-50%",
-      // }}
       transition={{ type: 'spring', stiffness: 100, damping: 20 }}
       style={{
         position: 'absolute',
@@ -62,7 +81,7 @@ const Query = ({ onSubmit }) => {
         position: 'absolute',
         top: '50%',
         right: 4,
-        transform: inputValue? "translateY(-50%)" : "translateY(200%)",
+        transform: inputValue ? "translateY(-50%)" : "translateY(200%)",
         transition: "all 0.2s ease-in-out",
       }}>
         <Icon

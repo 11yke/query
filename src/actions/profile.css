@@ -1,0 +1,24 @@
+.profile-pill-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  width: 16px;
+  height: 40px;
+  padding: 10px 12px;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  border: 1px solid var(--Shades-Smoke-Smoke-70, #141414);
+  backdrop-filter: blur(10px); /* Modal Blur */
+  position: fixed; /* Use fixed positioning */
+  bottom: 12px; /* Position 12px from the bottom */
+  left: 12px; /* Position 12px from the left edge */
+  overflow: hidden; /* Enable clipping */
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  background: lightgray 50% / cover no-repeat;
+  transform: rotate(-45deg); /* Counter rotate the image */
+}

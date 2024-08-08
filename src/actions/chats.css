@@ -1,0 +1,72 @@
+.chats {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px; /* Slightly reduced gap between the hover areas */
+  position: fixed; /* Ensures the component stays on the left side of the screen */
+  left: 0;
+  top: 50%; /* Vertically center the component */
+  transform: translateY(-50%);
+  padding: 20px; /* Adjust padding as needed */
+}
+
+.chat-line-wrapper {
+  width: auto; /* Auto width to accommodate the text */
+  height: 24px; /* Increased hover area height to 24px */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.chat-line {
+  width: 8px;
+  height: 1px;
+  transition: transform 0.3s ease, width 0.3s ease;
+}
+
+.chat-line.orange {
+  background: var(--Energies-Orange-Orange-40, #FF6209);
+}
+
+.chat-line.grey {
+  background: var(--glass-light-glass-light-glass-20, rgba(255, 255, 255, 0.20));
+}
+
+.chat-line-wrapper:hover .chat-line {
+  width: 20px; /* Increase the line width on hover */
+}
+
+.chat-line-wrapper:hover {
+  transform: translateX(6px); /* Push the text slightly to the right on hover */
+}
+
+.chat-text {
+  margin-left: 12px; /* Increase space between the line and the text to 12px */
+  transition: opacity 0.3s ease, margin-left 0.3s ease;
+  opacity: 0; /* Initially hidden */
+}
+
+.chat-line-wrapper:hover .chat-text {
+  opacity: 1; /* Show text on hover */
+}
+
+.active-chat {
+  color: var(--glass-light-glass-light-glass-40, rgba(255, 255, 255, 0.40));
+  font-family: Satoshi;
+  font-size: 16px; /* Increased font size to 16px */
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 166.667% */
+  text-transform: capitalize;
+}
+
+.inactive-chat {
+  color: var(--glass-light-glass-light-glass-20, rgba(255, 255, 255, 0.20));
+  font-family: Satoshi;
+  font-size: 16px; /* Increased font size to 16px */
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 166.667% */
+  text-transform: capitalize;
+}

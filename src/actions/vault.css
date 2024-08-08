@@ -1,0 +1,25 @@
+.vault-pill-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 16px;
+    height: 40px;
+    transform: rotate(-45deg);
+    padding: 10px 12px;
+    flex-shrink: 0;
+    border-radius: 9999px;
+    border: 1px solid var(--Shades-Smoke-Smoke-70, #141414);
+    background: var(--Shades-Smoke-Smoke-80, #090909);
+    backdrop-filter: blur(10px); /* Modal Blur */
+    position: fixed; /* Use fixed positioning */
+    bottom: 12px; /* Position 12px from the bottom */
+    right: 12px; /* Position 12px from the right edge */
+  }
+  
+  .vault-icon {
+    width: 16px;
+    height: 16px;
+    background: url('../Iconography/square-placeholder.svg') no-repeat center center;
+    background-size: cover;
+    transform: rotate(45deg); /* Counteract the container's rotation */
+  }

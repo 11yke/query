@@ -4,7 +4,10 @@ import Query from './query/query';
 import Galaxy from './visuals/galaxy/galaxy';
 import Mask from './visuals/mask/mask';
 import Call from './actions/call';
-import Messages from './actions/messages'; // Import the new Messages component
+import Messages from './actions/messages';
+import Profile from './actions/profile';
+import Vault from './actions/vault';
+import Chats from './actions/chats'; // Import the Chats component
 
 function App() {
   const [isActive, setIsActive] = useState(true);
@@ -37,20 +40,14 @@ function App() {
 
   return (
     <div className="App">
-      <Call /> {/* This should be at the top left */}
+      <Call />
       <Messages />
-      {/* {isActive && <Mask />}
-      {!isActive && <Galaxy />} */}
-      {/* <div style={{
-        width: '100vw',
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        // backgroundColor: 'white',
-      }}> */}
-        <Query onSubmit={handleQuerySubmit} />
-      {/* </div> */}
+      <Profile />
+      <Vault />
+      <Chats /> {/* Add Chats component here */}
+      {isActive && <Mask />}
+      {!isActive && <Galaxy />}
+      <Query onSubmit={handleQuerySubmit} />
     </div>
   );
 }

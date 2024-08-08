@@ -1,11 +1,11 @@
 import React from 'react';
 import './mask.css';
-import MaskGif from './mask.gif';
+import maskGif from './mask.gif'; // Ensure the path is correct
 
 const Mask = () => {
   return (
     <div className="mask-container">
-      <img src={MaskGif} alt="Mask" className="mask-image" />
+      <img src={maskGif} alt="Mask" className="mask-gif" />
     </div>
   );
 };

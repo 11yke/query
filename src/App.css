@@ -1,10 +1,3 @@
-html, body, #root {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  overflow: hidden; /* Prevent scrolling */
-}
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -14,8 +7,9 @@ body {
   color: white; /* Ensure text is white for better readability */
   height: 100vh; /* Ensure the body takes up the full viewport height */
   display: flex;
-  justify-content: center; /* Center content vertically */
-  align-items: center; /* Center content horizontally */
+  flex-direction: column;
+  justify-content: flex-end; /* Ensure content is pushed to the bottom */
+  align-items: center; /* Center horizontally */
 }
 
 code {
@@ -25,10 +19,7 @@ code {
 .App {
   text-align: center;
   width: 100%; /* Ensure the App container takes full width */
-  height: 100%; /* Ensure the App container takes full height */
-  position: relative; /* Relative positioning for absolute children */
   display: flex;
-  flex-direction: column; /* Arrange children in a column */
-  justify-content: space-between; /* Distribute space evenly between the children */
-  align-items: center; /* Center the children horizontally */
+  justify-content: center; /* Center the input component horizontally */
+  align-items: flex-end; /* Align the input component to the bottom */
 }

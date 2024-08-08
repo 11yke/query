@@ -49,7 +49,7 @@
   /* background: var(--glass-dark-glass-dark-glass-40, rgba(0, 0, 0, 0.40)); */
   background: #00000066;
   backdrop-filter: blur(10px);
-  z-index: 9999;
+  z-index: 3;
   overflow: hidden;
 }
 
@@ -71,4 +71,71 @@
 .input-container input::placeholder {
   color: #7c7c7c;
   /* Style placeholder text color */
+}
+
+/* Container for the icons */
+.input-container .icons {
+  display: flex;
+  gap: 8px;
+}
+
+/* Animation for hiding icons */
+.input-container .icons.hide {
+  animation: bounceOut 0.15s forwards; /* Apply bounceOut animation with faster duration */
+}
+
+/* Styling for individual icons */
+.input-container .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px; /* Adjusted to match the Figma dimensions */
+  height: 32px; /* Adjusted to match the Figma dimensions */
+  border: 1px solid var(--Shades-Smoke-Smoke-70, #141414); /* Adjusted for Figma border color */
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Hover effect for icons */
+.input-container .icon:hover {
+  background-color: rgba(124, 124, 124, 0.4); /* Adjusted for hover effect */
+}
+
+/* Styling for icon images */
+.input-container .icon img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Arrow icon styling */
+.icon.arrow-icon {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 32px; /* Adjusted to match the Figma dimensions */
+  height: 32px; /* Adjusted to match the Figma dimensions */
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  right: 16px; /* Adjust to align with the padding */
+  bottom: 4px; /* Ensure it starts from the bottom */
+}
+
+/* Show the arrow icon with animation */
+.icon.arrow-icon.show {
+  display: flex;
+  animation: bounceIn 0.3s forwards; /* Apply bounceIn animation */
+}
+
+/* Styling for arrow icon image */
+.icon.arrow-icon img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Ensure the arrow icon is black */
+.arrow-icon-img {
+  filter: invert(0%); 
 }
