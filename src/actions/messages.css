@@ -1,0 +1,34 @@
+.red-dot {
+    width: 11px;
+    height: 11px;
+    background-color: #CB0B03; /* Red color for messages */
+    border-radius: 50%;
+    position: absolute;
+    top: -8px; /* Half of the dot's size to align it properly */
+    left: 12px; /* Adjusted to position the dot at the top left */
+  }
+  
+  .messages-pill-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 16px;
+    height: 40px;
+    transform: rotate(45deg);
+    padding: 10px 12px;
+    flex-shrink: 0;
+    border-radius: 9999px;
+    border: 1px solid var(--Shades-Smoke-Smoke-70, #141414);
+    background: var(--Shades-Smoke-Smoke-80, #090909);
+    backdrop-filter: blur(10px); /* Modal Blur */
+    position: fixed; /* Use fixed positioning */
+    top: 12px; /* Position 12px from the top */
+    right: 12px; /* Position 12px from the right edge */
+  }
+  
+  .message-icon {
+    width: 18px;
+    height: 18px;
+    transform: rotate(-45deg); /* Rotate back to upright position */
+    fill: white; /* Ensure the icon is white */
+  }

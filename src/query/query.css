@@ -1,0 +1,74 @@
+/* Keyframes for bounce animation */
+@keyframes bounceIn {
+  0% {
+    transform: translateY(100%);
+  }
+
+  50% {
+    transform: translateY(-30%);
+  }
+
+  70% {
+    transform: translateY(10%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceOut {
+  0% {
+    transform: translateY(0);
+  }
+
+  20% {
+    transform: translateY(-20%);
+  }
+
+  50% {
+    transform: translateY(10%);
+  }
+
+  100% {
+    transform: translateY(-120%);
+  }
+}
+
+/* Container for the input and icons */
+.input-container {
+  display: flex;
+  width: 636px;
+  height: 40px;
+  padding: 4px 4px 4px 16px;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  border: 1px solid var(--Shades-Smoke-Smoke-70, #141414);
+  /* background: var(--glass-dark-glass-dark-glass-40, rgba(0, 0, 0, 0.40)); */
+  background: #00000066;
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/* Styling for the input field */
+.input-container input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 16px;
+  height: 100%;
+  /* Ensure input takes the full height of the container */
+  padding-left: 16px;
+  /* Padding on the left between text and beginning of input container */
+}
+
+/* Placeholder styling */
+.input-container input::placeholder {
+  color: #7c7c7c;
+  /* Style placeholder text color */
+}

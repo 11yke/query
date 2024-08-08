@@ -1,0 +1,13 @@
+.mask-container {
+  position: fixed;
+  display:flex;
+  inset:0;
+  justify-content: center;
+  align-items: center;
+  z-index: -10;
+}
+.mask-image {
+  width: 632px;
+  height: 356px;
+  flex-shrink: 0;
+}
